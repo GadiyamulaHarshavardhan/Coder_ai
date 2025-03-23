@@ -1,0 +1,15 @@
+.uploadIcon {
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  background: none;
+  padding: 0;
+  margin: 0;
+}
+
+.uploadIconSvg {
+  width: 24px; /* Adjust as needed */
+  height: 24px; /* Adjust as needed */
+  fill: #919294; /* Blue color for the icon */
+  vertical-align: middle; /* Aligns the icon with text if present */
+}

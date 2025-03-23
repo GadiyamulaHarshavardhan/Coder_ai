@@ -1,0 +1,158 @@
+/* Aside.css */
+
+/* Aside Icon */
+.asideIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 20px;
+  height: 40px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 1000;
+}
+
+.asideIcon:hover {
+  opacity: 0.8; /* Slight fade on hover */
+}
+
+.asideIcon.open {
+  transform: rotate(90deg); /* Rotate icon when aside is open */
+}
+
+.asideIcon .bar {
+  width: 24px;
+  height: 3px;
+  background-color: #c5c9cf; /* Blue color for the bars */
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.asideIcon.open .bar:nth-child(1) {
+  transform: translateY(8px) rotate(45deg); /* Animate first bar */
+}
+
+.asideIcon.open .bar:nth-child(2) {
+  opacity: 0; /* Hide middle bar */
+}
+
+.asideIcon.open .bar:nth-child(3) {
+  transform: translateY(-8px) rotate(-45deg); /* Animate third bar */
+}
+
+/* Aside Panel */
+.aside {
+  width: 200px;
+  background-color: #202123;
+  color: #fff;
+  padding: 10px;
+  border-radius: 12px;
+  overflow-y: auto;
+  height: calc(100vh - 40px);
+  margin: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 80px;
+  left: 10px;
+  right: 20px;
+  z-index: 999;
+  transform: translateX(-100%); /* Hide aside by default */
+  transition: transform 0.3s ease;
+}
+
+.aside.open {
+  transform: translateX(0); /* Show aside when open */
+}
+
+/* Add Conversation Section */
+.addConversation {
+  margin-bottom: 16px;
+}
+
+.addConversation input {
+  width: 78%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #343541;
+  color: #fff;
+  outline: none;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.addConversation button {
+  width: 78%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #40414f;
+  color: #fff;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.2s ease;
+}
+
+.addConversation button:hover {
+  background-color: #4a4b5a; /* Darker blue on hover */
+}
+
+/* Search Bar */
+.searchBar {
+  margin-bottom: 16px;
+}
+
+.searchBar input {
+  width: 78%;
+  padding: 12px;
+  border: none;
+  border-radius: 12px;
+  background-color: #343541;
+  color: #fff;
+  outline: none;
+  font-size: 16px;
+}
+
+/* Conversation List */
+.conversationList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.conversationItem {
+  padding: 12px;
+  border-radius: 12px;
+  cursor: pointer;
+  margin-bottom: 8px;
+  background-color: #343541;
+  transition: background-color 0.2s ease;
+}
+
+.conversationItem:hover {
+  background-color: #40414f; /* Darker background on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .aside {
+    width: 100%;
+    margin: 0;
+    border-radius: 0;
+    height: auto;
+    padding: 16px;
+    top: 60px;
+    left: 0;
+  }
+
+  .asideIcon {
+    top: 10px;
+    left: 10px;
+  }
+}

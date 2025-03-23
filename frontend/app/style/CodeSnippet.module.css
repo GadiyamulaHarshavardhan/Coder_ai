@@ -1,0 +1,51 @@
+/* Container for the code snippet */
+.codeSnippetContainer {
+    position: relative;
+    background-color: #282c34; /* Dark background */
+    border-radius: 8px;
+    padding: 16px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Monaco Editor */
+  .monaco-editor {
+    border: none;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  /* Copy Button */
+  .copyButton {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    background-color: #3d5afe;
+    color: white;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .copyButton:hover {
+    background-color: #2948ff;
+  }
+  
+  .copyButton.copied {
+    background-color: #2ecc71; /* Green for "Copied" state */
+  }
+  
+  .copyButton span {
+    font-weight: bold;
+  }
+  
+  .copyButton i {
+    font-size: 18px;
+  }

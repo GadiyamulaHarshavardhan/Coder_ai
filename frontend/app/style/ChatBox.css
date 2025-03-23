@@ -1,0 +1,51 @@
+.chatBox {
+    overflow-y: auto;
+    padding: 16px;
+    transition: all 0.3s ease;
+    height: calc(100vh - 120px);
+    display: flex;
+    flex-direction: column;
+    width: 75%;
+    max-width: 1200px;
+    background-color: #202123;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE and Edge */
+  }
+  
+  .chatBox::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for WebKit browsers */
+  }
+  
+  /* Media queries for responsiveness */
+  @media (max-width: 1200px) {
+    .chatBox {
+      width: 85%;
+    }
+  }
+  
+  @media (max-width: 992px) {
+    .chatBox {
+      width: 90%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .chatBox {
+      width: 95%;
+      border-radius: 20px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .chatBox {
+      width: 100%;
+      border-radius: 10px;
+      padding: 10px;
+      height: calc(100vh - 100px);
+    }
+  }

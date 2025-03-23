@@ -1,0 +1,40 @@
+/* Import component-specific styles */
+@import './style/ChatBox.css';
+@import './style/Message.css';
+@import './style/InputBox.css';
+@import './style/Aside.css';
+@import './style/EmojiPicker.css';
+@import './style/SendIcon.css';
+@import './style/UploadIcon.css';
+
+
+/* Global styles */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background-color: #202123;
+}
+
+.container {
+  display: flex;
+  height: 100vh;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 16px;
+  color: white;
+  padding: 16px;
+  font-size: 24px;
+  font-weight: bold;
+}

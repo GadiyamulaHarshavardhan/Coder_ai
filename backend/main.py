@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api import generate
+from backend.api import generate
 
 # Create FastAPI instance
 app = FastAPI(

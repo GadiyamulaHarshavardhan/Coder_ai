@@ -1,0 +1,18 @@
+.emojiPickerContainer {
+    position: relative;
+  }
+  
+  .emojiButton {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #fff; /* Ensure the emoji button is visible */
+  }
+  
+  .picker {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    z-index: 1000;
+  }

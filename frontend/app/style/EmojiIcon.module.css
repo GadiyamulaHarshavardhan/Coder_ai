@@ -1,0 +1,43 @@
+/* EmojiIcon.module.css */
+
+.emojiButton {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  
+  .emojiButton:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+    opacity: 0.9; /* Slight fade on hover */
+  }
+  
+  .emojiIcon {
+    width: 24px;
+    height: 24px;
+    fill: #cdd2da; /* Professional blue color */
+    transition: fill 0.2s ease, transform 0.2s ease;
+  }
+  
+  .emojiIcon.hovered {
+    fill: #aebbce; /* Darker blue on hover */
+    transform: rotate(15deg); /* Tilt icon on hover */
+  }
+  
+  /* Optional: Add a bounce animation on click */
+  @keyframes bounce {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.2);
+    }
+  }
+  
+  .emojiButton:active .emojiIcon {
+    animation: bounce 0.3s;
+  }
