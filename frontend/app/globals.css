@@ -1,40 +1,26 @@
-/* Import component-specific styles */
-@import './style/ChatBox.css';
-@import './style/Message.css';
-@import './style/InputBox.css';
-@import './style/Aside.css';
-@import './style/EmojiPicker.css';
-@import './style/SendIcon.css';
-@import './style/UploadIcon.css';
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
+@layer components {
+  :root {
+    --color-primary: 77 151 255;
+    --color-secondary: 64 65 79;
+    --color-background: 243 244 246;
+    --color-foreground: 31 41 55;
+  }
+  .dark {
+    --color-primary: 59 130 246; /* Keep your blue primary */
+    --color-secondary: 82 82 91;  /* Keep your gray secondary */
+    --color-background: 30 32 36; /* Lighter black (almost dark gray) */
+    --color-foreground: 249 250 251; /* Keep white text */
+    
+    /* Additional contrast colors */
+    --color-border: 55 65 81;     /* Slightly lighter border */
+    --color-accent: 75 85 99;      /* For subtle highlights */
+  }
 
-/* Global styles */
-body {
-  margin: 0;
-  padding: 0;
-  font-family: Arial, sans-serif;
-  height: 100vh;
-  overflow: hidden;
-  background-color: #202123;
-}
-
-.container {
-  display: flex;
-  height: 100vh;
-}
-
-.main {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  padding: 20px;
-}
-
-.header {
-  text-align: center;
-  margin-bottom: 16px;
-  color: white;
-  padding: 16px;
-  font-size: 24px;
-  font-weight: bold;
+  body {
+    @apply bg-background text-foreground min-h-screen;
+  }
 }

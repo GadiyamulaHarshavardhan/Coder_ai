@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import Editor from "@monaco-editor/react";
-import "../style/CodeSnippet.module.css"; // Import the CSS file
 
 interface CodeSnippetProps {
   code: string; // The code to display
@@ -10,7 +9,7 @@ interface CodeSnippetProps {
   readOnly?: boolean; // Whether the editor is read-only
 }
 
-export default function CodeSnippet({ code, language = "python", readOnly = true }: CodeSnippetProps) {
+export default function CodeSnippet({ code, language = "javascript", readOnly = true }: CodeSnippetProps) {
   const [isCopied, setIsCopied] = useState(false);
 
   // Copy code to clipboard
@@ -22,10 +21,10 @@ export default function CodeSnippet({ code, language = "python", readOnly = true
   };
 
   return (
-    <div className="codeSnippetContainer">
+    <div className="relative mt-2">
       {/* Editor */}
       <Editor
-        height="auto" // Adjust height dynamically
+        height="200px" // Adjust height as needed
         language={language}
         value={code}
         theme="vs-dark" // Dark theme for better readability
@@ -34,18 +33,17 @@ export default function CodeSnippet({ code, language = "python", readOnly = true
           minimap: { enabled: false }, // Disable minimap
           lineNumbers: "on", // Show line numbers
           scrollBeyondLastLine: false, // Disable extra scrolling
-          fontSize: 16, // Adjust font size
+          fontSize: 14, // Adjust font size
           wordWrap: "on", // Enable word wrap for better readability
-          overviewRulerLanes: 0, // Hide the ruler
-          glyphMargin: false, // Hide the margin
-          folding: false, // Disable folding
         }}
       />
 
       {/* Copy Button */}
-      <button className={`copyButton ${isCopied ? "copied" : ""}`} onClick={handleCopy}>
-        <span>{isCopied ? "Copied!" : "Copy Code"}</span>
-        <i className="material-icons">content_copy</i>
+      <button
+        className="absolute top-2 right-2 px-4 py-2 bg-blue-600 text-white rounded-md text-sm hover:bg-blue-700 active:scale-95 transition-all"
+        onClick={handleCopy}
+      >
+        {isCopied ? "Copied!" : "Copy Code"}
       </button>
     </div>
   );
