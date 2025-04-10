@@ -102,12 +102,9 @@ export default function InputBox({ onSendMessage, onFileUpload }: InputBoxProps)
           }}
           onFocus={handleInteraction}
           className="flex-1 p-3 sm:p-4 pb-2 bg-background text-foreground placeholder:text-muted-foreground
-                  rounded-t-2xl outline-none resize-none overflow-y-auto
-                  max-h-[150px] sm:max-h-[120px] min-h-[44px]
-                  border-b border-input focus:border-b-primary focus:ring-0
-                  scrollbar-thin scrollbar-thumb-border scrollbar-track-background/50
-                  transition-[height] duration-200 ease-in-out text-sm sm:text-base
-                  origin-bottom"
+           rounded-t-2xl outline-none resize-none overflow-y-auto max-h-[150px] sm:max-h-[120px] min-h-[44px]
+           border-none focus:border-none focus:ring-0 scrollbar-thin scrollbar-thumb-border scrollbar-track-background/50
+           transition-[height] duration-200 ease-in-out text-sm sm:text-base origin-bottom"
           placeholder="Message.."
           rows={1}
         />
@@ -121,7 +118,7 @@ export default function InputBox({ onSendMessage, onFileUpload }: InputBoxProps)
                   focusTextarea();
                   handleInteraction();
                 }}
-                className="w-5 h-5 sm:w-6 sm:h-6 text-foreground/80 hover:text-foreground transition-colors"
+                
               />
               {showEmojiPicker && (
                 <div className="absolute bottom-10 left-0 z-[1000]">
@@ -132,7 +129,6 @@ export default function InputBox({ onSendMessage, onFileUpload }: InputBoxProps)
 
             <UploadIcon
               onClick={handleFileButtonClick}
-              className="w-5 h-5 sm:w-6 sm:h-6 text-foreground/80 hover:text-foreground transition-colors"
             />
             <input
               type="file"
